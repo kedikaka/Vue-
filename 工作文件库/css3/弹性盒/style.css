@@ -1,0 +1,20 @@
+.father{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background: rebeccapurple;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;;
+}
+.father div{
+    width: 150px;
+    height: 150px;
+    background: yellow;
+}
+.father .son3{
+    background: red;
+}

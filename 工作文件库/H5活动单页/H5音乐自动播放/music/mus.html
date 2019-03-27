@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        #btn{
+            background-image: url(./img/musicOff.png);
+            background-repeat:no-repeat;width: 100px;
+            height: 100px;background-size: 100%; 
+        }
+    </style>
+</head>
+
+<body style="background:black;">
+    <div style="width:100px;height:100px;background:rebeccapurple;">
+
+    </div>
+    <p style="color:red;">你好你好你好那还哦</p>
+    <div id="btn">
+    
+    </div>
+    <!-- 音乐部分 autoplay-->
+    <audio id="musicfx" loop="loop">
+        <source src="./chr-music.mp3" type="audio/mpeg">
+        </audio>
+</body>
+<script>
+    // 默认音乐状态为false
+    var musicState = false;
+    var audio = document.getElementById('musicfx');
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            audio.play().then(function () {
+                $('#btn').css({
+                    'animation': 'rotate 2s linear infinite',
+                    '-webkit-animation': 'rotate 2s linear infinite',
+                    'background-image': 'url(./img/musicOn.png)'
+                })
+                musicState = true;
+            });
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play().then(function () {
+                    $('#btn').css({
+                        'animation': 'rotate 2s linear infinite',
+                        '-webkit-animation': 'rotate 2s linear infinite',
+                        'background-image': 'url(./img/musicOn.png)'
+                    })
+                    musicState = true;
+                });
+            }, false);
+        }
+        audioAutoPlay();
+        if (!musicState) { // 如果音乐自动播放失败
+
+        }
+    });
+    $('#btn').on('touchstart', function () {
+        if (musicState == true) { //音乐正在播放，暂停音乐，暂停动画
+            $('#btn').css({
+                'animation': 'rotate 2s linear infinite',
+                'animation-play-state': 'paused',
+                '-webkit-animation-play-state': 'paused',
+                'background-image': 'url(./img/musicOff.png)'
+            })
+            $('#musicfx')[0].pause();
+            musicState = false;
+        } else {
+            $('#btn').css({
+                'animation': 'rotate 2s linear infinite',
+                'animation-play-state': 'running',
+                '-webkit-animation-play-state': 'running',
+                'background-image': 'url(./img/musicOn.png)'
+            })
+            $('#musicfx')[0].play();
+            musicState = true;
+        }
+    });
+
+
+
+    // // 开启音乐,设置音乐状态(一开始音乐关闭设置为false)
+    // var musicOn = false;
+    // var audio = document.getElementById('musicfx');
+    // var touchPing = false;
+    // audio.play().then(function () { //音乐播放成功
+    //     musicOn = true;
+    //     $('.music').attr('src', '/resources/qrpay/images/holidayFestival/newYear/musicOn.png')
+    //     $('.music').css({
+    //         'animation-play-state': 'running',
+    //         '-webkit-animation-play-state': 'running'
+    //     })
+    //     setTimeout(function () {
+    //         $('.music').css({
+    //             'animation-play-state': 'paused',
+    //             '-webkit-animation-play-state': 'paused'
+    //         })
+    //         $('.music').attr('src', '/resources/qrpay/images/holidayFestival/newYear/musicOff.png')
+    //         $('#musicfx')[0].pause()
+    //         musicOn = false;
+    //     }, 80000)
+    // }).catch(function () {
+    //     //触屏开启音乐
+    //     touchPing = true;
+    //     $(document).one('click', function () {
+    //         touchPing = false;
+
+    //         function audioAutoPlay() {
+    //             $('.music').css({
+    //                 'animation-play-state': 'running',
+    //                 '-webkit-animation-play-state': 'running'
+    //             })
+    //             $('.music').attr('src', '/resources/qrpay/images/holidayFestival/newYear/musicOn.png')
+    //             $('#musicfx')[0].play();
+    //             setTimeout(function () {
+    //                 $('.music').css({
+    //                     'animation-play-state': 'paused',
+    //                     '-webkit-animation-play-state': 'paused'
+    //                 })
+    //                 $('.music').attr('src',
+    //                     '/resources/qrpay/images/holidayFestival/newYear/musicOff.png')
+    //                 $('#musicfx')[0].pause()
+    //                 musicOn = false;
+    //             }, 80000)
+    //         }
+    //         audioAutoPlay();
+    //         musicOn = true;
+    //     });
+    // })
+
+    // $('.music').click(function () {
+    //         // if (num == 1) {
+    //         //     num = 2;
+    //         // } else {
+    //         if (!touchPing) {
+    //             musicOn = !musicOn;
+    //             if (!musicOn) {
+    //                 $('.music').css({
+    //                     'animation-play-state': 'paused',
+    //                     '-webkit-animation-play-state': 'paused'
+    //                 })
+    //                 $('.music').attr('src', '/resources/qrpay/images/holidayFestival/newYear/musicOff.png')
+
+    //                 $('#musicfx')[0].pause()
+    //             } else {
+    //                 // 音乐播放两边关闭
+    //                 setTimeout(function () {
+    //                     $('.music').css({
+    //                         'animation-play-state': 'paused',
+    //                         '-webkit-animation-play-state': 'paused'
+    //                     })
+    //                     $('.music').attr('src',
+    //                         '/resources/qrpay/images/holidayFestival/newYear/musicOff.png')
+    //                     $('#musicfx')[0].pause()
+    //                     musicOn = false;
+    //                 }, 80000)
+    //                 $('.music').css({
+    //                     'animation-play-state': 'running',
+    //                     '-webkit-animation-play-state': 'running'
+    //                 })
+    //                 $('.music').attr('src', '/resources/qrpay/images/holidayFestival/newYear/musicOn.png')
+    //                 $('#musicfx')[0].play()
+    //             }
+    //         }
+    //     }
+    //}
+    // )
+</script>
+
+</html>

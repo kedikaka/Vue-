@@ -1,0 +1,169 @@
+*, *:before, *:after {
+	margin:0;
+	padding:0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);/*清除点击默认的高亮效果*/      
+	box-sizing:border-box; /* 启用IE盒子模型 */
+	-webkit-box-sizing: border-box;/*以你的border开始计算你的宽度*/
+	max-height: 100000px;
+	/*实现移动端页面弹性滚动*/
+	-webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+i, em, strong, b, s {
+  font-style: normal;
+  font-weight:normal;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+body {
+	font-size: 0.24rem;
+    font-family: "Microsoft YaHei",sans-serif;/*第二个是手机的一个默认的字体*/
+    color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+q:before, q:after { content: ''; }
+
+img{
+	border:none; /* img 搭车：让链接里的 img 无边框 */
+	vertical-align: middle;
+}
+
+/*清除浮动元素*/
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix{*+height:1%;}
+
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+	outline:none;
+	border:0;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+/* 清除Input type="number"的默认样式 */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/*在chrome下：*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+
+/*Firefox下：*/
+input[type="number"]{-moz-appearance:textfield;}
+
+/* 去除IE下input type="password"下的眼睛和type="text"下的叉号*/
+::-ms-clear,::-ms-reveal{ display:none;} 
+
+
+/*通用部分*/
+body{ background:#fff;}
+.page{ max-width:12rem; margin:0 auto;}
+
+/*按钮*/
+/*.btn{ padding:0.5rem 0.3rem;}*/
+.btn a{ width:100%; height:0.88rem; line-height:0.88rem; text-align:center; background:#FFCF17; border-radius:0.08rem; font-size:0.3rem; color:#585C64; letter-spacing:0.02rem; display:block;}
+.btn a:active{ background:#ecc015;}
+
+/*下拉加载更多*/
+.dropload-down{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    font-size: 0.28rem;
+    /* 开启硬件加速 */
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+	/* border-top:1px solid #e1e1e1; */
+}
+
+
+.dropload-down{
+    height: 0.8rem;
+}
+
+.dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+}
+
+.dropload-load .loading{
+    display: inline-block;
+    height: 0.25rem;
+    width: 0.25rem;
+    border-radius: 100%;
+    margin: 0.1rem;
+    border: 0.03rem solid #666;
+    border-bottom-color: transparent;
+    vertical-align: middle;
+    -webkit-animation: rotate 0.75s linear infinite;
+    animation: rotate 0.75s linear infinite;
+}
+/*浏览器的兼容*/
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+/* 旋转动画 */
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
