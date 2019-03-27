@@ -12,4 +12,7 @@ https://mgbq.github.io/vue-permission/#/dashboard/dashboard
         数据权限， 比如统计概况， 普通管理员不能看到公司营业概况，但能看到自己所属区域的概况
 
         显示权限， 比如列表， 运营能看到那一列的签约金额，但市场不能看到签约金额这一列
-      
+## 权限控制的实现方案
+ ### vue-element-admin权限控制方案
+
+ ### 简单权限控制方案
