@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>这里是微信h5网页授权你好年后</p>
+</body>
+<script src="jquery.js"></script>
+<script>
+    // $.ajax({
+    //     type: "get",
+    //     url: "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0fcb62897eac457c&secret=90915f666658d417fec78e52ac5a67ae&code=021EZqPH15IiQ10OC7QH1pWmPH1EZqPG&grant_type=authorization_code",
+    //     data: "data",
+    //     dataType: "json",
+    //     success: function (response) {
+    //         console.log(response);    
+    //     }
+    // });
+    // $.ajax({
+    //     type: "get",
+    //     url: "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=wx0fcb62897eac457c&grant_type=refresh_token&refresh_token=20_ab4jVc2j-Se2iyqBPlR6aJivVcsx3H-Ovst318v-LTn27Sz9BrmLrTsrPWJTml8ocmACTXJrxcQnp_JiFqR2yw",
+    //     data: "data",
+    //     dataType: "json",
+    //     success: function (response) {
+    //         console.log(response)  
+    //     }
+    // });
+    // $.ajax({
+    //     type: "get",
+    //     url: "https://api.weixin.qq.com/sns/userinfo?access_token=20_ULYzy85Zls6cI_f-32PQWk6LNWiaLBPwkYAJHcBoI5-PAST7UtzbtjZ2ovrpKTJT16bi_4ekKWIcJp8NYNlynA&openid=odmfu54RrKSqDTsP16qoVozHpyes&lang=zh_CN",
+    //     data: "data",
+    //     dataType: "json",
+    //     success: function (response) {
+    //         console.log(response);
+    //     }
+    // });
+    console.log(encodeURIComponent('http://127.0.0.1:8080/H5auth.html'));
+</script>
+
+<!-- https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0fcb62897eac457c&redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2FH5auth.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect -->
+</html>

@@ -17,8 +17,12 @@
 <script>
     $.ajax({
         type: "get",
-        url: 'http://con.51limahui.com/apis/recommend/getWechatConfigParams',
-        data: {url:111},
+        url: 'http://106.75.222.222:17530/api/microblog/search',
+        data: {page:0,size:10},
+		headers: {
+			adminUserId: 'b7b998a7453a46d185a9917f536bbfab',
+			safeCode: '11982ef57dc30e475537b49e3a5e0be3'
+		},
         dataType: "json",
         success: function (res){
             console.log(res);
