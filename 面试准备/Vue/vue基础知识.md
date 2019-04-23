@@ -39,11 +39,11 @@ destoryed: 销毁完成状态
     const router = new VueRouter({
     routes: [
         {
-        path: '/foo',
-        component: Foo,
-        beforeEnter: (to, from, next) => {
-            // ...
-        }
+            path: '/foo',
+            component: Foo,
+            beforeEnter: (to, from, next) => {
+                // ...
+            }
         }
     ]
     })
@@ -144,3 +144,9 @@ https://www.cnblogs.com/giveiris/p/5237080.html
 ### 如何优化SPA应用的首屏加载速度慢的问题？
 
 ### 前端如何优化网站性能？
+
+### vue slot 插槽
+ #### 插槽
+
+### vue自定义指令
+ #### vue自定义
